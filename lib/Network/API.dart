@@ -1,5 +1,5 @@
 // ngrok URL (changes every restart)
-const String host = "https://212d2dcc592c.ngrok-free.app";
+const String host = "https://474125367d32.ngrok-free.app";
 
 // adjust path (since your index.php is at root of ict-server-main)
 const String serverPath = "/ict-server-testing/api/index.php";
