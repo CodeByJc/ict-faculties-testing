@@ -97,7 +97,7 @@ class FeedbackScreen extends GetView<FeedbackController> {
                                       return Text(
                                         "Review hidden until viewed.",
                                         style: TextStyle(
-                                          color: muGrey3,
+                                          color: muGrey2,
                                           fontStyle: FontStyle.italic,
                                           fontSize: getSize(context, 1.8),
                                         ),
