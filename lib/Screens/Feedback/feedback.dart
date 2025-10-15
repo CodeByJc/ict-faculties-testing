@@ -10,7 +10,6 @@ import '../../Helper/Style.dart';
 import '../../Helper/size.dart';
 import '../../Widgets/Refresh/adaptive_refresh_indicator.dart';
 import '../Loading/adaptive_loading_screen.dart';
-
 class FeedbackScreen extends GetView<FeedbackController> {
   const FeedbackScreen({super.key});
 
