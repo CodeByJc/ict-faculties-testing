@@ -1,7 +1,7 @@
 // ngrok URL (changes every restart)
 const String host = "https://noninvincibly-unstocked-rosena.ngrok-free.dev";
 // adjust path (since your index.php is at root of ict-server-main)
-const String serverPath = "/dashboard/ict-server-testing/api/index.php";
+const String serverPath = "/ict-server-testing/api/index.php";
 String validateLogoutAPI = "$host$serverPath/Faculty/logout";
 String CurrentVersion = "1.0";
 String validApiKey = "ictmu";
