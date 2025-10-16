@@ -8,11 +8,14 @@ String validApiKey = "ictmu";
 String updateURL = 'https://devanpatel28.blogspot.com/';
 
 const String validateLoginAPI = "$host$serverPath/Faculty/login";
-
+String getAnnouncementFieldAPI = "$host$serverPath/Announcement/fields";
 String validateVersionAPI = '$host$serverPath/AppVersion/check';
 
 String updatePasswordAPI = '$host$serverPath/Password/updatePassword';
-
+String announcementListAPI = '$host$serverPath/Announcement/list';
+String announcementGetAPI = '$host$serverPath/Announcement/get';
+String announcementAddAPI = '$host$serverPath/Announcement/add';
+String announcementDeleteAPI = '$host$serverPath/Announcement/delete';
 String getScheduleAPI = '$host$serverPath/Attendance/GetFacultySchedule';
 String getAttendanceListAPI = '$host$serverPath/Attendance/GetAttendanceList';
 String uploadAttendanceAPI = '$host$serverPath/Attendance/UploadAttendance';

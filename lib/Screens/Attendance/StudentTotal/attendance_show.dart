@@ -5,7 +5,7 @@ import '../../../Controllers/attendance_show_controller.dart';
 import '../../../Helper/Colors.dart';
 import '../../../Helper/Components.dart';
 import '../../../Widgets/Refresh/adaptive_refresh_indicator.dart';
-import '../../../Widgets/heading_1.dart';
+import '../../../Widgets/heading_2.dart';
 import '../../Loading/adaptive_loading_screen.dart';
 
 class StudentAttendanceScreen extends GetView<AttendanceShowController> {

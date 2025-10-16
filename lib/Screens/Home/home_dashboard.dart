@@ -123,6 +123,11 @@ class _DashboardScreenState extends State<DashboardScreen> {
                     TapIcons(context, "Student Search", 2,
                         HugeIcons.strokeRoundedUserSearch01, 40,
                         "/student-search", null),
+                    TapIcons(context, "Announcement", 2,
+                        HugeIcons.strokeRoundedBubbleChatSecure, 40,
+                        "/Announcement", {
+                          'faculty_id': userData.id
+                        }),
                   ],
                 ),
               ),

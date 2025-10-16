@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import '../Helper/colors.dart';
+import '../Helper/Colors.dart';
 import '../Helper/Components.dart';
 
-class Heading1 extends StatelessWidget {
+class Heading2 extends StatelessWidget {
   final String text;
   final double fontSize;
   final double leftPadding;
   final TextOverflow textWrap;
 
-  const Heading1({
+  const Heading2({
     super.key,
     required this.text,
     required this.fontSize,

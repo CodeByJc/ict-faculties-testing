@@ -7,7 +7,8 @@ import '../../Helper/Components.dart';
 import '../../Helper/colors.dart';
 import '../../Models/student_rounds_model.dart';
 import '../../Widgets/Refresh/adaptive_refresh_indicator.dart';
-import '../../Widgets/heading_1.dart';
+import '../../Widgets/heading_2.dart';
+
 import '../Loading/adaptive_loading_screen.dart';
 
 class StudentRoundsScreen extends GetView<StudentRoundsController> {

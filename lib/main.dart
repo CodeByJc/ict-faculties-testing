@@ -14,9 +14,10 @@ import 'package:ict_faculties/Screens/Authentication/change_password.dart';
 import 'package:ict_faculties/Screens/Exception/no_schedule_available.dart';
 import 'package:ict_faculties/Screens/Exception/service_not_available.dart';
 import 'package:ict_faculties/Screens/Feedback/feedback.dart';
-import 'package:ict_faculties/Screens/Profile/profile.dart';
-import 'package:ict_faculties/Screens/StudentEngage/add_engage_student.dart';
-import 'package:ict_faculties/Screens/Attendance/Extra/extra_attendance_schedule.dart';
+import 'package:ict_faculties/Screens/Announcement/announcement.dart';
+import 'package:ict_faculties/Screens/Announcement/announcement_add.dart';
+import 'package:ict_faculties/Screens/Announcement/announcement_delete.dart';
+import 'package:ict_faculties/Binding/announcement_binding.dart';
 import 'package:ict_faculties/Screens/StudentEngage/engage_students_list.dart';
 import 'package:ict_faculties/Screens/StudentSearch/search.dart';
 import 'Binding/attendance_show_binding.dart';
@@ -24,6 +25,7 @@ import 'Binding/change_password_binding.dart';
 import 'Binding/extra_attendance_schedule_binding.dart';
 import 'Binding/student_details_binding.dart';
 import 'Binding/student_rounds_binding.dart';
+import 'Screens/Attendance/Extra/extra_attendance_schedule.dart';
 import 'Screens/Attendance/Regular/reg_mark_attendance.dart';
 import 'Screens/Attendance/Regular/reg_attendance_schedule.dart';
 import 'Screens/Attendance/StudentTotal/attendance_show.dart';
@@ -31,7 +33,9 @@ import 'Screens/Home/home_dashboard.dart';
 import 'Screens/Authentication/forgot_password.dart';
 import 'Screens/Authentication/login.dart';
 import 'Screens/Placements/student_placement_screen.dart';
+import 'Screens/Profile/profile.dart';
 import 'Screens/Splash/main_splash.dart';
+import 'Screens/StudentEngage/add_engage_student.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -155,6 +159,22 @@ class MyApp extends StatelessWidget {
             transition: Transition.fadeIn,
             binding: StudentRoundsBinding(),
             page: () => const StudentRoundsScreen()),
+        GetPage(
+            name: "/Announcement",
+            transition: Transition.fadeIn,
+            binding: AnnouncementBinding(),
+            page: () => const AnnouncementScreen()),
+        GetPage(
+            name: "/addAnnouncement",
+            transition: Transition.fadeIn,
+            binding: AnnouncementBinding(),
+            page: () => const AnnouncementAddScreen(facultyId: 1)),
+        GetPage(
+            name: "/deleteAnnouncement",
+            transition: Transition.fadeIn,
+            binding: AnnouncementBinding(),
+            page: () => AnnouncementDeleteScreen(facultyId: 1)),
+
       ],
       initialRoute: "/splashscreen",
     );
