@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:get_storage/get_storage.dart';
 import 'package:hugeicons/hugeicons.dart';
 import 'package:intl/intl.dart';
 
@@ -8,6 +9,7 @@ import '../../Helper/Components.dart' hide Heading1;
 import '../../Models/announcement_model.dart';
 import '../../Helper/Style.dart';
 import '../../Helper/colors.dart';
+import 'package:ict_faculties/Models/faculty.dart';
 import '../../Helper/size.dart';
 import '../../Widgets/heading_2.dart';
 import '../../Widgets/heading_1.dart';
@@ -24,11 +26,15 @@ class AnnouncementScreen extends StatefulWidget {
 
 class _AnnouncementScreenState extends State<AnnouncementScreen> {
   final AnnouncementController _controller = Get.find<AnnouncementController>();
+  final box = GetStorage();
+  late Faculty userData;
   int batchId = 0;
 
   @override
   void initState() {
     super.initState();
+    Map<String, dynamic> storedData = box.read('userdata');
+    userData = Faculty.fromJson(storedData);
     final args = Get.arguments ?? {};
     batchId = args['batch_id'] ?? 0;
     _controller.fetchAnnouncements(batchId: batchId);
@@ -67,7 +73,7 @@ class _AnnouncementScreenState extends State<AnnouncementScreen> {
                     iconData: HugeIcons.strokeRoundedAdd01,
                     route: "/addAnnouncement",
                     routeArg: {
-                      'batch_id': batchId,
+                      'faculty_id': userData.id,
                     },
                   ),
                   TapIcon2(
@@ -75,7 +81,7 @@ class _AnnouncementScreenState extends State<AnnouncementScreen> {
                     iconData: HugeIcons.strokeRoundedDelete01,
                     route: "/deleteAnnouncement",
                     routeArg: {
-                      'batch_id': batchId,
+                      'faculty_id': userData.id,
                     },
                   ),
                 ],

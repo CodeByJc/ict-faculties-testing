@@ -4,6 +4,7 @@ import 'package:get/get_navigation/get_navigation.dart';
 import 'package:ict_faculties/Binding/extra_mark_attendance_binding.dart';
 import 'package:ict_faculties/Binding/feedback_bindings.dart';
 import 'package:ict_faculties/Binding/punch_bindings.dart';
+import 'package:ict_faculties/Models/faculty.dart';
 import 'package:ict_faculties/Binding/reg_attendance_schedule_binding.dart';
 import 'package:ict_faculties/Binding/reg_mark_attendance_binding.dart';
 import 'package:ict_faculties/Binding/splash_binding.dart';
@@ -168,13 +169,13 @@ class MyApp extends StatelessWidget {
             name: "/addAnnouncement",
             transition: Transition.fadeIn,
             binding: AnnouncementBinding(),
-            page: () => const AnnouncementAddScreen(facultyId: 1)),
+            page: () => const AnnouncementAddScreen()),
         GetPage(
             name: "/deleteAnnouncement",
             transition: Transition.fadeIn,
             binding: AnnouncementBinding(),
 
-            page: () => AnnouncementDeleteScreen(facultyId: 1)),
+            page: () => AnnouncementDeleteScreen()),
 
       ],
       initialRoute: "/splashscreen",

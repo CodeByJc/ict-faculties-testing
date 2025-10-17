@@ -5,9 +5,7 @@ import '../../Models/announcement_model.dart';
 import '../../Helper/colors.dart';
 
 class AnnouncementDeleteScreen extends StatefulWidget {
-  final int facultyId;
-
-  const AnnouncementDeleteScreen({Key? key, required this.facultyId}) : super(key: key);
+  const AnnouncementDeleteScreen({Key? key}) : super(key: key);
 
   @override
   State<AnnouncementDeleteScreen> createState() => _AnnouncementDeleteScreenState();
@@ -15,20 +13,28 @@ class AnnouncementDeleteScreen extends StatefulWidget {
 
 class _AnnouncementDeleteScreenState extends State<AnnouncementDeleteScreen> {
   final AnnouncementController _controller = Get.find<AnnouncementController>();
+  int? facultyId;
 
   @override
   void initState() {
     super.initState();
-    print('📲 AnnouncementDeleteScreen initialized for Faculty ID: ${widget.facultyId}');
-
-    // Delay until first frame is rendered
+    // Get faculty_id from arguments passed via TapIcon2/routeArg
+    final args = Get.arguments;
+    facultyId = args != null && args['faculty_id'] != null ? args['faculty_id'] as int : null;
+    print('📲 AnnouncementDeleteScreen initialized for Faculty ID: $facultyId');
     WidgetsBinding.instance.addPostFrameCallback((_) {
       _fetchFacultyAnnouncements();
     });
   }
+
   Future<void> _fetchFacultyAnnouncements() async {
-    print('🔄 Fetching announcements for faculty ID: ${widget.facultyId}');
-    await _controller.fetchAnnouncementsByFaculty(widget.facultyId);
+    if (facultyId == null) {
+      print('❌ facultyId is null. Cannot fetch announcements.');
+      Get.snackbar("Error", "Faculty ID not found!", backgroundColor: Colors.red, colorText: Colors.white);
+      return;
+    }
+    print('🔄 Fetching announcements for faculty ID: $facultyId');
+    await _controller.fetchAnnouncementsByFaculty(facultyId!);
     print('✅ Fetched announcements. Total count: ${_controller.announcements.length}');
   }
 
