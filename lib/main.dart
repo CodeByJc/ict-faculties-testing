@@ -173,6 +173,7 @@ class MyApp extends StatelessWidget {
             name: "/deleteAnnouncement",
             transition: Transition.fadeIn,
             binding: AnnouncementBinding(),
+
             page: () => AnnouncementDeleteScreen(facultyId: 1)),
 
       ],

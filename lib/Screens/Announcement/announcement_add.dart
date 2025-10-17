@@ -59,9 +59,12 @@ class _AnnouncementAddScreenState extends State<AnnouncementAddScreen> {
 
     setState(() => _isSubmitting = true);
 
-    final today = DateTime.now();
-    final formattedDate =
-        "${today.year}-${today.month.toString().padLeft(2, '0')}-${today.day.toString().padLeft(2, '0')}";
+    final now = DateTime.now();
+    final timestamp =
+        "${now.year}-${now.month.toString().padLeft(2, '0')}-${now.day.toString().padLeft(2, '0')} "
+        "${now.hour.toString().padLeft(2, '0')}:${now.minute.toString().padLeft(2, '0')}:${now.second.toString().padLeft(2, '0')}";
+
+
 
     final success = await _controller.addAnnouncement(
       title: _titleController.text.trim(),
@@ -69,7 +72,7 @@ class _AnnouncementAddScreenState extends State<AnnouncementAddScreen> {
       facultyId: widget.facultyId,
       batchId: _selectedBatchId!,
       announcementTypeId: _selectedTypeId!,
-      announcementDate: formattedDate,
+      announcementDate: timestamp,
     );
 
     setState(() => _isSubmitting = false);
@@ -89,7 +92,7 @@ class _AnnouncementAddScreenState extends State<AnnouncementAddScreen> {
     } else {
       Get.snackbar("❌ Error", "Failed to add announcement. Try again later.",
           snackPosition: SnackPosition.TOP,
-          backgroundColor: Colors.red.shade600,
+          backgroundColor: muColor,
           colorText: Colors.white);
     }
   }

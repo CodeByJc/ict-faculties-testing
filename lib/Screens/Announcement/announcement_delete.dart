@@ -48,7 +48,7 @@ class _AnnouncementDeleteScreenState extends State<AnnouncementDeleteScreen> {
               },
               child: const Text("Cancel")),
           ElevatedButton(
-              style: ElevatedButton.styleFrom(backgroundColor: Colors.red),
+              style: ElevatedButton.styleFrom(backgroundColor: muColor),
               onPressed: () {
                 print('✅ Delete confirmed by user.');
                 Navigator.pop(context, true);
@@ -74,7 +74,7 @@ class _AnnouncementDeleteScreenState extends State<AnnouncementDeleteScreen> {
       } else {
         print('❌ Failed to delete announcement ID: ${announcement.id}');
         Get.snackbar("Error", "Failed to delete announcement.",
-            backgroundColor: Colors.red.shade400,
+            backgroundColor: muColor,
             colorText: Colors.white,
             snackPosition: SnackPosition.TOP);
       }
@@ -119,7 +119,7 @@ class _AnnouncementDeleteScreenState extends State<AnnouncementDeleteScreen> {
                 elevation: 3,
                 margin: const EdgeInsets.symmetric(vertical: 6, horizontal: 4),
                 child: ListTile(
-                  leading: const Icon(Icons.campaign, color: Colors.blue),
+                  leading: Icon(Icons.campaign, color: muColor),
                   title: Text(
                     ann.title,
                     style: const TextStyle(
@@ -130,7 +130,7 @@ class _AnnouncementDeleteScreenState extends State<AnnouncementDeleteScreen> {
                     style: const TextStyle(color: Colors.grey),
                   ),
                   trailing: IconButton(
-                    icon: const Icon(Icons.delete, color: Colors.red),
+                    icon: Icon(Icons.delete, color: muColor),
                     onPressed: () => _confirmDelete(ann),
                   ),
                 ),
